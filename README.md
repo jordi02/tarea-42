@@ -1,6 +1,27 @@
 # Coderhouse backend, comision 32105
 
 
+## 09/02/2023
+````
+> npm run graphql
+````
+* Queries disponibles:
+  * getAllProducts
+  * getProductById
+* Mutations disponibles:
+  * createNewProduct
+  * updateProduct
+  * deleteProduct
+
+## 06/02/2023
+#### Testing
+````
+> npm run axios
+````
+* Levanta el servidor tal como lo tenemos hasta ahora
+  * Para testearlo con axios, hacer en paralelo npm run test-axios
+  * Para testearlo con mocha, tirar abajo el servidor, y hacer npm run test-mocha
+
 ## 28/01/2023
 #### Persistencia
 ````

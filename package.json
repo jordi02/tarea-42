@@ -11,6 +11,7 @@
     "array-flatten": "^1.1.1",
     "assert": "^2.0.0",
     "autocannon": "^7.10.0",
+    "axios": "^1.3.1",
     "balanced-match": "^1.0.2",
     "bcrypt": "^5.1.0",
     "better-sqlite3": "^7.6.2",
@@ -20,6 +21,7 @@
     "braces": "^3.0.2",
     "bytes": "^3.1.2",
     "call-bind": "^1.0.2",
+    "chai": "^4.3.7",
     "chokidar": "^3.5.3",
     "compression": "^1.7.4",
     "concat-map": "^0.0.1",
@@ -39,6 +41,7 @@
     "escape-html": "^1.0.3",
     "etag": "^1.8.1",
     "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
     "express-handlebars": "^6.0.6",
     "express-pug": "^1.0.0",
     "express-session": "^1.17.3",
@@ -52,6 +55,8 @@
     "function-bind": "^1.1.1",
     "get-intrinsic": "^1.1.2",
     "glob-parent": "^5.1.2",
+    "graphql": "^16.6.0",
+    "graphql-express": "^2.0.7",
     "handlebars": "^4.7.7",
     "has": "^1.0.3",
     "has-flag": "^3.0.0",
@@ -73,6 +78,7 @@
     "mime-db": "^1.52.0",
     "mime-types": "^2.1.35",
     "minimatch": "^3.1.2",
+    "mocha": "^10.2.0",
     "moment": "^2.29.4",
     "mongoose": "^6.7.0",
     "ms": "^2.0.0",
@@ -111,6 +117,7 @@
     "socket.io": "^4.5.2",
     "sqlite3": "^5.1.2",
     "statuses": "^2.0.1",
+    "supertest": "^6.3.3",
     "supports-color": "^5.5.0",
     "to-regex-range": "^5.0.1",
     "toidentifier": "^1.0.1",
@@ -124,7 +131,8 @@
     "winston": "^3.8.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-axios": "node 42-Axios/tests/axios.js",
+    "test-mocha": "mocha 42-Axios/tests/mocha-chai-supertest.js",
     "handlebars": "nodemon start 10-Decima-clase/handlebars/restful.js",
     "pug": "nodemon start 10-Decima-clase/pug/restful.js",
     "ejs": "nodemon start 10-Decima-clase/ejs/restful.js",
@@ -140,6 +148,8 @@
     "logsnperf": "node 32-LogsnPerf/main.js",
     "terceraentrega": "nodemon 36-TerceraEntrega/main.js",
     "capas": "nodemon 38-Capas/main.js",
-    "persistencia": "nodemon 40-Persistencia/main.js"
+    "persistencia": "nodemon 40-Persistencia/main.js",
+    "axios": "nodemon 42-Axios/main.js",
+    "graphql": "nodemon 44-Graphql/main.js"
   }
 }

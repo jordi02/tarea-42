@@ -1,6 +1,7 @@
 const express = require('express')
 const { Server: HttpServer } = require('http')
 const { Server: IOServer } = require('socket.io')
+const { graphqlHTTP } = require('express-graphql')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
@@ -11,6 +12,11 @@ const bodyParser = require('body-parser')
 const path = require('path')
 const compression = require('compression');
 const dotenv = require('dotenv')
+
+const { getAllProducts, getProductById, createNewProduct, 
+updateProduct, deleteProduct} = require('../controllers/gqlController.js')
+
+const gqlSchemas = require('../db/schemas/gqlSchemas')
 
 const homeRouter = require('../routes/home.js').router
 const accountsRouter = require('../routes/accounts.js').router
@@ -91,6 +97,17 @@ app.use('/accounts', accountsRouter)
 app.use('/productos', productosRouter)
 app.use('/carritos', carritosRouter)
 app.use('/compras', comprasRouter)
+app.use('/gql', graphqlHTTP({
+    schema: gqlSchemas,
+    rootValue: {
+        getAllProducts,
+        getProductById,
+        createNewProduct,
+        updateProduct,
+        deleteProduct
+    },
+    graphiql: true
+}))
 
 // Handleo todo lo no implementado aca
 app.all("*", (req, res) => {    

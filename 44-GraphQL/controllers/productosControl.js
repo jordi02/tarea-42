@@ -20,8 +20,8 @@ async function createNewProduct(req, res) {
         req.body.price,
         req.body.thumbnail
     )
-    let newProductId = await productsHelper.insert(product)
-    res.send(`Se creo el producto ${newProductId}`)
+    await productsHelper.insert(product)
+    res.send(product)
 }
 
 async function updateProduct(req, res) {
@@ -32,7 +32,7 @@ async function updateProduct(req, res) {
         req.body.newPrice,
         req.body.newThumbnail
     )
-    await productsHelper.update(updatedProduct, reqId)
+    await productsHelper.overwrite(reqId, updatedProduct)
     res.send(productsHelper.getByID(reqId)) }
     else {
         res.send(`No se encontro el objeto buscado`)
